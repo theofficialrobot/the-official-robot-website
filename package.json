@@ -1,0 +1,26 @@
+{
+  "name": "the-official-robot",
+  "private": true,
+  "version": "1.0.0",
+  "description": "The Official Robot marketplace — Vite React storefront + Express API",
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run server\" \"npm run client\"",
+    "server": "node server/index.js",
+    "client": "npm run dev --prefix client",
+    "seed": "node server/seed.js",
+    "postinstall": "npm install --prefix client"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.3.0",
+    "sharp": "^0.35.4"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

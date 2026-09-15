@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan-purple">
+<head>
+<meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('or_theme_v1');
+    if (t === 'orange-magenta') t = 'magenta-orange';
+    if (t === 'leo' || t === 'gemini' || t === 'capricorn') t = 'yellow-brown';
+    if (t === 'sagittarius' || t === 'libra' || t === 'scorpio' || t === 'aries') t = 'magenta-orange';
+    if (t === 'cyan-purple' || t === 'yellow-brown' || t === 'magenta-orange' || t === 'yellow-green') {
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sell a robot — The Official Robot™</title>
+<meta name="description" content="List used and resale robots by exact model SKU. The Official Robot marketplace.">
+<link rel="icon" type="image/png" href="imagine_images/[The_Official_Robot]_icon_large_square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-store">
+<a class="skip-link" href="#main">Skip to content</a>
+<script src="js/theme.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/shell.js" data-page="sell"></script>
+<main id="main" class="page-copy">
+  <div class="container">
+<p class="kicker">Sell · used-robot liquidity</p>
+<h1>List by exact catalog SKU. Not “robot dog.”</h1>
+<p class="lead">The largest resale market in robotics will be the one that refuses free-text junk. You pick the manufacturer and model from the catalog — the same SKU as the Configuration Lab — grade condition, and publish.</p>
+<div class="page-grid">
+  <div class="page-card"><h3>New</h3><p>Authorized and direct. Same catalog SKU as the lab.</p></div>
+  <div class="page-card"><h3>Like new</h3><p>Opened or lightly demonstrated. Exact manufacturer + model, honest photos.</p></div>
+  <div class="page-card"><h3>Certified pre-owned</h3><p>Inspected. Inspection notes required. Official Robot CPO badge on the listing.</p></div>
+  <div class="page-card"><h3>Used</h3><p>Honest grade. Financing, warranty, and service still attach.</p></div>
+</div>
+<a class="page-cta" href="http://127.0.0.1:5173/add">List a robot in the marketplace</a>
+<p style="margin-top:16px;font-size:0.85rem;">Sign in required to publish. Anyone can browse.</p>
+  </div>
+</main>
+<footer id="or-footer"></footer>
+</body>
+</html>

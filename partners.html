@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan-purple">
+<head>
+<meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('or_theme_v1');
+    if (t === 'orange-magenta') t = 'magenta-orange';
+    if (t === 'leo' || t === 'gemini' || t === 'capricorn') t = 'yellow-brown';
+    if (t === 'sagittarius' || t === 'libra' || t === 'scorpio' || t === 'aries') t = 'magenta-orange';
+    if (t === 'cyan-purple' || t === 'yellow-brown' || t === 'magenta-orange' || t === 'yellow-green') {
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partners — US + Vietnam — The Official Robot™</title>
+<meta name="description" content="US and Vietnam manufacturing and technology partnership. Incentives to build and list through The Official Robot.">
+<link rel="icon" type="image/png" href="imagine_images/[The_Official_Robot]_icon_large_square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-home">
+<a class="skip-link" href="#main">Skip to content</a>
+<script src="js/theme.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/shell.js" data-page="home"></script>
+<main id="main" class="page-copy">
+  <div class="container">
+<p class="kicker">Partners</p>
+<h1>Build in the US. Scale in Vietnam. Sell everywhere.</h1>
+<p class="lead">We partner with manufacturers and technology houses that want North American distribution plus a used-robot aftermarket that does not exist anywhere else.</p>
+<h2>United States</h2>
+<p>Huntington Beach headquarters. Authorized distributor and retailer. We structure channel, financing, warranty, and service so US buyers can acquire with confidence.</p>
+<h2>Vietnam</h2>
+<p>Manufacturing and technology partnership for cost, speed, and export. Incentives for partners who list new platforms and take back used units through our SKU catalog.</p>
+<div class="page-grid">
+  <div class="page-card"><h3>Why list with us</h3><p>Exact-model catalog. Global demand. Attach revenue on finance, service, and protection plans.</p></div>
+  <div class="page-card"><h3>Why build with us</h3><p>A resale channel from day one. That is the difference between a product launch and a market.</p></div>
+</div>
+<a class="page-cta page-cta-grad" href="mailto:hello@theofficialrobot.com?subject=Partnership%20Inquiry">Talk partnerships</a>
+  </div>
+</main>
+<footer id="or-footer"></footer>
+</body>
+</html>

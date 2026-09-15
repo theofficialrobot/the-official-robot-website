@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan-purple">
+<head>
+<meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('or_theme_v1');
+    if (t === 'orange-magenta') t = 'magenta-orange';
+    if (t === 'leo' || t === 'gemini' || t === 'capricorn') t = 'yellow-brown';
+    if (t === 'sagittarius' || t === 'libra' || t === 'scorpio' || t === 'aries') t = 'magenta-orange';
+    if (t === 'cyan-purple' || t === 'yellow-brown' || t === 'magenta-orange' || t === 'yellow-green') {
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financing — The Official Robot™</title>
+<meta name="description" content="Structured robot financing. Spread plus fee revenue. Request terms on any configured build.">
+<link rel="icon" type="image/png" href="imagine_images/[The_Official_Robot]_icon_large_square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-home">
+<a class="skip-link" href="#main">Skip to content</a>
+<script src="js/theme.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/shell.js" data-page="home"></script>
+<main id="main" class="page-copy">
+  <div class="container">
+<p class="kicker">Financing</p>
+<h1>Acquire the platform. Spread the capital.</h1>
+<p class="lead">High-intent buyers should not wait for a wire on a six-figure humanoid. We structure terms aligned with how platforms are actually delivered — and we earn on spread plus fee.</p>
+<ul>
+  <li>Request financing on every configured build in the marketplace.</li>
+  <li>New, like new, certified pre-owned, and used — attach is not only for OEM-new units.</li>
+  <li>Quote confirms landed cost, duties, and term. Estimates in the catalog are not a contract.</li>
+</ul>
+<a class="page-cta page-cta-grad" href="http://127.0.0.1:5173/">Request financing on a listing</a>
+  </div>
+</main>
+<footer id="or-footer"></footer>
+</body>
+</html>

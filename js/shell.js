@@ -1,0 +1,181 @@
+/* Inject shared header + footer. Works on file:// (no fetch). data-page = home | store */
+(function () {
+  var ALEPH = '<svg viewBox="-4 -4 205 251" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M33.0 0.0C33.3 3.3 33.3 14.2 35.0 20.0C36.7 25.8 39.2 30.0 43.0 35.0C46.8 40.0 47.5 40.8 58.0 50.0C68.5 59.2 93.2 78.8 106.0 90.0C118.8 101.2 129.7 113.0 135.0 117.0C140.3 121.0 136.0 121.8 138.0 114.0C140.0 106.2 149.0 79.0 147.0 70.0C145.0 61.0 131.5 63.7 126.0 60.0C120.5 56.3 116.3 51.0 114.0 48.0C111.7 45.0 112.3 46.0 112.0 42.0C111.7 38.0 110.8 31.0 112.0 24.0C113.2 17.0 117.0 2.7 119.0 0.0C121.0 -2.7 121.7 5.8 124.0 8.0C126.3 10.2 130.7 11.8 133.0 13.0C135.3 14.2 134.5 14.7 138.0 15.0C141.5 15.3 148.2 14.5 154.0 15.0C159.8 15.5 168.5 16.8 173.0 18.0C177.5 19.2 178.3 19.8 181.0 22.0C183.7 24.2 187.0 27.3 189.0 31.0C191.0 34.7 192.3 40.0 193.0 44.0C193.7 48.0 193.5 51.0 193.0 55.0C192.5 59.0 191.5 65.3 190.0 68.0C188.5 70.7 188.5 70.3 184.0 71.0C179.5 71.7 167.2 71.3 163.0 72.0C158.8 72.7 160.5 72.0 159.0 75.0C157.5 78.0 155.5 83.7 154.0 90.0C152.5 96.3 150.7 107.0 150.0 113.0C149.3 119.0 149.7 122.7 150.0 126.0C150.3 129.3 146.0 126.5 152.0 133.0C158.0 139.5 179.0 157.3 186.0 165.0C193.0 172.7 192.3 175.3 194.0 179.0C195.7 182.7 195.7 183.8 196.0 187.0C196.3 190.2 196.5 194.3 196.0 198.0C195.5 201.7 194.3 205.5 193.0 209.0C191.7 212.5 190.5 215.2 188.0 219.0C185.5 222.8 181.5 228.2 178.0 232.0C174.5 235.8 169.0 243.5 167.0 242.0C165.0 240.5 166.8 228.0 166.0 223.0C165.2 218.0 164.3 216.3 162.0 212.0C159.7 207.7 167.3 212.3 152.0 197.0C136.7 181.7 86.3 135.2 70.0 120.0C53.7 104.8 57.3 108.5 54.0 106.0C50.7 103.5 52.0 104.3 50.0 105.0C48.0 105.7 44.3 108.0 42.0 110.0C39.7 112.0 37.7 114.3 36.0 117.0C34.3 119.7 32.7 122.2 32.0 126.0C31.3 129.8 30.5 134.8 32.0 140.0C33.5 145.2 35.8 150.3 41.0 157.0C46.2 163.7 57.7 173.8 63.0 180.0C68.3 186.2 70.7 189.5 73.0 194.0C75.3 198.5 76.7 202.7 77.0 207.0C77.3 211.3 76.7 216.0 75.0 220.0C73.3 224.0 69.5 228.7 67.0 231.0C64.5 233.3 71.2 233.5 60.0 234.0C48.8 234.5 9.8 234.7 0.0 234.0C-9.8 233.3 -0.5 231.0 1.0 230.0C2.5 229.0 6.7 229.3 9.0 228.0C11.3 226.7 13.7 224.2 15.0 222.0C16.3 219.8 16.7 218.7 17.0 215.0C17.3 211.3 17.7 206.7 17.0 200.0C16.3 193.3 13.7 183.7 13.0 175.0C12.3 166.3 12.7 154.3 13.0 148.0C13.3 141.7 13.3 141.7 15.0 137.0C16.7 132.3 18.3 126.3 23.0 120.0C27.7 113.7 39.7 103.0 43.0 99.0C46.3 95.0 47.2 100.5 43.0 96.0C38.8 91.5 23.3 78.0 18.0 72.0C12.7 66.0 12.7 63.8 11.0 60.0C9.3 56.2 8.5 52.3 8.0 49.0C7.5 45.7 7.7 41.8 8.0 40.0C8.3 38.2 9.8 38.8 10.0 38.0C10.2 37.2 8.8 36.0 9.0 35.0C9.2 34.0 10.7 33.3 11.0 32.0C11.3 30.7 9.5 30.3 11.0 27.0C12.5 23.7 16.5 16.3 20.0 12.0C23.5 7.7 29.8 3.0 32.0 1.0C34.2 -1.0 32.8 0.2 33.0 0.0Z"/></svg>';
+
+  var script = document.currentScript;
+  var page = (script && script.getAttribute('data-page')) || 'home';
+  document.body.classList.add(page === 'store' || page === 'sell' ? 'page-store' : 'page-home');
+
+  var MARKET = 'http://127.0.0.1:5173/';
+
+  function hereFile() {
+    var path = (location.pathname || '').replace(/\\/g, '/');
+    var file = decodeURIComponent(path.split('/').pop() || '');
+    if (!file || file.indexOf('.') === -1) return 'index.html';
+    return file;
+  }
+
+  function navLinks() {
+    if (page === 'store') {
+      return [
+        { href: 'index.html', label: 'Home' },
+        { href: MARKET, label: 'Marketplace' },
+        { href: '#configurator', label: 'Configuration Lab' },
+        { href: '#configurator', label: 'Configure', cta: true }
+      ];
+    }
+    return [
+      { href: MARKET, label: 'Marketplace' },
+      { href: 'store.html', label: 'Catalog' },
+      { href: 'sell.html', label: 'Sell' },
+      { href: MARKET, label: 'Enter Marketplace', cta: true }
+    ];
+  }
+
+  function searchFormHTML() {
+    var isLab = page === 'store';
+    var action = isLab ? 'store.html' : MARKET;
+    var q = '';
+    try { q = new URLSearchParams(location.search).get('q') || ''; } catch (e) {}
+    return (
+      '<form class="nav-search" id="navSearchForm" role="search" action="' + action + '" method="get"' +
+        (isLab ? ' data-lab-search="1"' : '') + '>' +
+        '<input type="search" id="navSearch" name="q" placeholder="Search models, makers, specs…" value="' +
+          String(q).replace(/"/g, '&quot;') + '" autocomplete="off" aria-label="Search robots">' +
+        '<button type="submit" class="nav-search-btn">Search</button>' +
+      '</form>'
+    );
+  }
+
+  function linkIsCurrent(link) {
+    if (!link || link.cta) return false;
+    var href = link.href || '';
+    if (/^https?:/i.test(href)) return false;
+    var file = href.split('#')[0].split('?')[0].split('/').pop();
+    return file === hereFile();
+  }
+
+  function headerHTML() {
+    var items = navLinks().map(function (link) {
+      var cls = link.cta ? 'nav-cta' : 'nav-link';
+      var current = linkIsCurrent(link) ? ' aria-current="page"' : '';
+      return '<li><a class="' + cls + '" href="' + link.href + '"' + current + '>' + link.label + '</a></li>';
+    }).join('');
+
+    var cart = page === 'store'
+      ? '<button class="nav-cart" id="cartBtn" aria-label="Open shopping cart" title="Cart">🛒<span class="cart-badge" id="cartBadge" data-count="0">0</span></button>'
+      : '';
+
+    return (
+      '<svg class="or-mark-defs" width="0" height="0" aria-hidden="true" focusable="false">' +
+        '<defs><linearGradient id="orMarkGrad" x1="12%" y1="0%" x2="88%" y2="100%">' +
+          '<stop offset="0%" stop-color="var(--accent-bright)"/>' +
+          '<stop offset="48%" stop-color="var(--accent)"/>' +
+          '<stop offset="100%" stop-color="var(--purple)"/>' +
+        '</linearGradient></defs>' +
+      '</svg>' +
+      '<header class="site-header">' +
+        '<nav>' +
+          '<div class="container nav-inner">' +
+            '<a href="index.html" class="logo" aria-label="The Official Robot home">' +
+              '<span class="logo-mark" id="themeToggle" role="button" tabindex="0" title="Change color theme" aria-label="Change color theme">' +
+                ALEPH +
+              '</span>' +
+              '<span class="logo-word">The Official Robot™</span>' +
+            '</a>' +
+            searchFormHTML() +
+            '<ul class="nav-links" id="navLinks">' + items + '</ul>' +
+            '<div class="nav-actions">' +
+              cart +
+              '<button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">' +
+                '<span></span><span></span><span></span>' +
+              '</button>' +
+            '</div>' +
+          '</div>' +
+        '</nav>' +
+        '<div id="or-subnav-slot"></div>' +
+      '</header>' +
+      '<div class="nav-backdrop" id="navBackdrop" hidden></div>'
+    );
+  }
+
+  function footerHTML() {
+    var labHref = page === 'store' ? '#configurator' : 'store.html#configurator';
+    var waitHref = page === 'home' ? '#waitlist' : 'index.html#waitlist';
+    return (
+      '<footer>' +
+        '<div class="container">' +
+          '<div class="footer-inner">' +
+            '<div class="footer-brand">' +
+              '<div class="logo-word">The Official Robot™</div>' +
+              '<p>Global marketplace for humanoid, quadruped, aerial, and marine robots — new, pre-owned, and configured to specification. Headquarters in Huntington Beach, California.</p>' +
+              '<a class="footer-contact" href="mailto:hello@theofficialrobot.com">hello@theofficialrobot.com</a>' +
+            '</div>' +
+            '<div class="footer-col">' +
+              '<h5>Marketplace</h5>' +
+              '<ul>' +
+                '<li><a href="index.html">Home</a></li>' +
+                '<li><a href="' + MARKET + '">Marketplace</a></li>' +
+                '<li><a href="store.html">Catalog</a></li>' +
+                '<li><a href="sell.html">Sell a robot</a></li>' +
+                '<li><a href="' + labHref + '">Configuration Lab</a></li>' +
+              '</ul>' +
+            '</div>' +
+            '<div class="footer-col">' +
+              '<h5>Services</h5>' +
+              '<ul>' +
+                '<li><a href="financing.html">Financing</a></li>' +
+                '<li><a href="service.html">Service &amp; repair</a></li>' +
+                '<li><a href="warranty.html">Warranty support</a></li>' +
+                '<li><a href="store.html?type=hand#configurator">Parts &amp; upgrades</a></li>' +
+              '</ul>' +
+            '</div>' +
+            '<div class="footer-col">' +
+              '<h5>Company</h5>' +
+              '<ul>' +
+                '<li><a href="partners.html">Partners</a></li>' +
+                '<li><a href="news.html">News</a></li>' +
+                '<li><a href="mailto:hello@theofficialrobot.com">Contact</a></li>' +
+              '</ul>' +
+            '</div>' +
+          '</div>' +
+          '<div class="footer-bottom">' +
+            '<span>© 2026 The Official Robot™. All rights reserved.</span>' +
+            '<span>Huntington Beach, California · Authorized distribution</span>' +
+          '</div>' +
+        '</div>' +
+      '</footer>'
+    );
+  }
+
+  if (script) script.insertAdjacentHTML('afterend', headerHTML());
+  if (window.OR_THEME) window.OR_THEME.wireMark();
+  if (window.OR_NAV) window.OR_NAV.wire();
+
+  function adoptSubnav() {
+    var slot = document.getElementById('or-subnav-slot');
+    var bar = document.getElementById('subNavBar');
+    if (slot && bar && bar.parentNode !== slot) slot.appendChild(bar);
+  }
+
+  function fillFooter() {
+    var el = document.getElementById('or-footer');
+    if (el && !el.getAttribute('data-filled')) {
+      el.setAttribute('data-filled', '1');
+      el.outerHTML = footerHTML();
+    }
+  }
+
+  function boot() {
+    adoptSubnav();
+    fillFooter();
+    if (window.OR_THEME) window.OR_THEME.wireMark();
+    if (window.OR_NAV) window.OR_NAV.wire();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();

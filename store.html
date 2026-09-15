@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan-purple">
+<head>
+<meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('or_theme_v1');
+    if (t === 'orange-magenta') t = 'magenta-orange';
+    if (t === 'leo' || t === 'gemini' || t === 'capricorn') t = 'yellow-brown';
+    if (t === 'sagittarius' || t === 'libra' || t === 'scorpio' || t === 'aries') t = 'magenta-orange';
+    if (t === 'cyan-purple' || t === 'yellow-brown' || t === 'magenta-orange' || t === 'yellow-green') {
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Official Robot™ — Configure & Own Your Platform</title>
+<meta name="description" content="The Official Robot™ marketplace for humanoid robots, dexterous hands, campanionoids, aerial drones, and marine platforms. Configure a platform or end-effector, add colors and protection plans, and see live pricing.">
+<meta property="og:title" content="The Official Robot™ — Configuration Lab">
+<meta property="og:description" content="Configure humanoid, quadruped, aerial, and marine robots. New and used, financed, serviced, and protected.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="imagine_images/[The_Official_Robot]_logo_square.png">
+<link rel="icon" type="image/png" href="imagine_images/[The_Official_Robot]_icon_large_square.png">
+<link rel="apple-touch-icon" href="imagine_images/[The_Official_Robot]_icon_large_square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/store.css">
+</head>
+<body class="page-store">
+<a class="skip-link" href="#main">Skip to content</a>
+<script src="js/theme.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/shell.js" data-page="store"></script>
+<div class="sub-nav-bar" id="subNavBar">
+  <div class="container sub-nav-inner">
+    <div class="sub-nav-label">Type</div>
+    <div class="sub-nav-links" id="typeSelect" role="tablist" aria-label="Platform type"></div>
+  </div>
+</div>
+
+<!-- Cart Modal -->
+<div class="cart-modal-overlay" id="cartOverlay">
+  <div class="cart-modal">
+    <div class="cart-modal-header">
+      <h3>Your Configuration Cart</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty">Your cart is empty. Configure a platform and add it to the cart.</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-promo">
+        <input type="text" id="promoInput" placeholder="Promo code (e.g. QUEST10)" maxlength="24">
+        <button type="button" id="promoApply">Apply</button>
+      </div>
+      <div id="promoMsg" style="font-size:0.8rem;color:var(--text-dim);margin:8px 0 0;min-height:1.2em;"></div>
+      <div class="cart-subtotal">
+        <span>Estimated Subtotal</span>
+        <span id="cartSubtotal">$0</span>
+      </div>
+      <a href="#configurator" class="btn btn-check" id="cartCheckout" onclick="closeCart()">Continue Configuring →</a>
+      <p class="cart-note">Prices are estimates. Final landed cost, duties, and lead times confirmed on quote. Cart saved in this browser.</p>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+<section id="configurator">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-kicker">Configuration Lab</p>
+      <h2>Specify your platform</h2>
+      <p>Select a model, then confirm configuration, finish, accessories, and coverage. Pricing shown is an estimate pending formal quotation.</p>
+    </div>
+
+    <div class="config-layout">
+      <div class="config-selectors">
+        <div class="config-panel" id="platformSelectPanel" style="margin-bottom: 14px;">
+          <h3><span class="step-num">1</span> Platform</h3>
+          <p class="panel-hint" id="platformSelectHint">Select a model from the category above. Platforms are listed by estimated list price, highest to lowest.</p>
+          <div class="platform-collapsed-bar" id="platformCollapsedBar" hidden>
+            <div class="platform-collapsed-info">
+              <span class="platform-collapsed-label">Selected platform</span>
+              <strong id="platformCollapsedName">—</strong>
+            </div>
+            <button type="button" class="btn btn-ghost platform-change-btn" id="platformChangeBtn">Change selection</button>
+          </div>
+          <div class="model-select-grid" id="modelSelect"></div>
+        </div>
+
+        <div class="config-panel" id="tierSelectPanel" style="margin-bottom: 14px;">
+          <h3><span class="step-num">2</span> Configuration</h3>
+          <p class="panel-hint">Choose the manufacturer’s published package. Higher configurations typically add compute, sensing, end-effectors, and development access.</p>
+          <div class="variant-row" id="variantSelect"></div>
+        </div>
+
+        <div class="config-panel" id="colorSelectPanel" style="margin-bottom: 14px;">
+          <h3><span class="step-num">3</span> Finish</h3>
+          <p class="panel-hint">Select an available factory finish. Standard colors are included; limited or specialty finishes may carry a surcharge.</p>
+          <div class="color-swatches" id="colorSelect"></div>
+        </div>
+
+        <div class="config-panel" id="addonSelectPanel" style="margin-bottom: 14px;">
+          <h3><span class="step-num">4</span> Accessories</h3>
+          <p class="panel-hint">Optional, platform-compatible accessories and upgrades. Coverage is selected in the following step.</p>
+          <div class="addon-list" id="addonSelect"></div>
+        </div>
+
+        <div class="config-panel" id="warrantySelectPanel" style="display:none;">
+          <h3><span class="step-num">5</span> Coverage</h3>
+          <p class="panel-hint">Manufacturer standard warranty is included with the platform. Official Robot Protection Plans extend parts and labor coverage beyond that term. A three-year plan is pre-selected as the recommended term.</p>
+          <label class="warranty-select-label" for="warrantySelect">Coverage term</label>
+          <div class="warranty-select-wrap">
+            <select id="warrantySelect" class="warranty-select" aria-label="Warranty coverage" onchange="selectWarranty(this.value)">
+              <option value="mfr">Manufacturer standard — included</option>
+              <option value="1yr">Protection Plan — 1 year</option>
+              <option value="2yr">Protection Plan — 2 years</option>
+              <option value="3yr" selected>Protection Plan — 3 years (recommended)</option>
+            </select>
+          </div>
+          <p class="warranty-detail" id="warrantyDetail"></p>
+        </div>
+      </div>
+
+      <div class="summary-card" id="summaryCard">
+        <div class="summary-visual">
+          <div class="summary-ring"></div>
+          <div class="summary-color-overlay" id="colorOverlay"></div>
+          <img id="summaryImg" src="imagine_images/jSL8y.jpg" alt="" style="display:none;" loading="eager" decoding="async">
+          <div class="big-icon" id="summaryIcon">🤖</div>
+        </div>
+        <div class="summary-body">
+          <div class="summary-model-name" id="sumName">—</div>
+          <div class="summary-variant" id="sumVariant">Select a platform to begin configuration</div>
+          <div class="summary-ideal" id="sumIdeal" style="display:none;"></div>
+
+          <div class="summary-row">
+            <span class="label">Base configuration</span>
+            <span class="value" id="sumBase">$0</span>
+          </div>
+          <div class="summary-row">
+            <span class="label">Finish</span>
+            <span class="value" id="sumColor">$0</span>
+          </div>
+          <div class="summary-row">
+            <span class="label">Accessories</span>
+            <span class="value" id="sumAddons">$0</span>
+          </div>
+          <div class="summary-row">
+            <span class="label">Coverage</span>
+            <span class="value" id="sumWarranty">$0</span>
+          </div>
+
+          <div class="summary-total">
+            <span class="label">Estimated Total</span>
+            <span class="value" id="sumTotal">$0</span>
+          </div>
+
+          <div class="robot-card-specs" id="miniSpecs"></div>
+          <ul class="robot-highlights" id="summaryHighlights"></ul>
+
+          <div class="summary-actions" style="display:flex;flex-direction:column;gap:10px;">
+            <button class="btn btn-primary" id="addToCartBtn" onclick="addCurrentToCart()" style="width:100%;justify-content:center;">Add to quotation cart</button>
+            <a href="mailto:hello@theofficialrobot.com?subject=Platform%20Quote%20Request" class="btn btn-ghost" id="requestQuoteBtn" style="width:100%;justify-content:center;">Request a formal quote</a>
+            <button class="btn btn-ghost" onclick="resetConfig()" style="width:100%;justify-content:center;font-size:0.85rem;">Clear configuration</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="specs-content" id="configSpecs">
+      <div class="specs-bio-label">About this platform</div>
+      <div class="specs-intro" id="specsIntro"></div>
+      <table class="specs-table" id="specsTable">
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="or-footer"></footer>
+
+<script src="data/robots.js"></script>
+<script src="js/store.js"></script>
+</body>
+</html>

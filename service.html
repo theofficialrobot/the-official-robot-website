@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan-purple">
+<head>
+<meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('or_theme_v1');
+    if (t === 'orange-magenta') t = 'magenta-orange';
+    if (t === 'leo' || t === 'gemini' || t === 'capricorn') t = 'yellow-brown';
+    if (t === 'sagittarius' || t === 'libra' || t === 'scorpio' || t === 'aries') t = 'magenta-orange';
+    if (t === 'cyan-purple' || t === 'yellow-brown' || t === 'magenta-orange' || t === 'yellow-green') {
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service & Repair — The Official Robot™</title>
+<meta name="description" content="Professional service and repair for platforms sold through The Official Robot.">
+<link rel="icon" type="image/png" href="imagine_images/[The_Official_Robot]_icon_large_square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-home">
+<a class="skip-link" href="#main">Skip to content</a>
+<script src="js/theme.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/shell.js" data-page="home"></script>
+<main id="main" class="page-copy">
+  <div class="container">
+<p class="kicker">Service &amp; repair</p>
+<h1>Support that continues after delivery</h1>
+<p class="lead">A marketplace without service is a classifieds site. Service attaches on every listing — new and used — so units stay in the fleet instead of becoming scrap.</p>
+<div class="page-grid">
+  <div class="page-card"><h3>Every listing</h3><p>New, like new, CPO, and used. Service is an attach, not an afterthought.</p></div>
+  <div class="page-card"><h3>Parts aisle</h3><p>Hands and end-effectors live as accessories, listed by exact SKU next to the host platform.</p></div>
+</div>
+<a class="page-cta page-cta-grad" href="http://127.0.0.1:5173/">See listings with service attach</a>
+<p style="margin-top:16px;font-size:0.85rem;"><a href="mailto:hello@theofficialrobot.com?subject=Service%20and%20Repair">Or book service — hello@theofficialrobot.com</a></p>
+  </div>
+</main>
+<footer id="or-footer"></footer>
+</body>
+</html>

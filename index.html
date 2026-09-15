@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan-purple">
+<head>
+<meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('or_theme_v1');
+    if (t === 'orange-magenta') t = 'magenta-orange';
+    if (t === 'leo' || t === 'gemini' || t === 'capricorn') t = 'yellow-brown';
+    if (t === 'sagittarius' || t === 'libra' || t === 'scorpio' || t === 'aries') t = 'magenta-orange';
+    if (t === 'cyan-purple' || t === 'yellow-brown' || t === 'magenta-orange' || t === 'yellow-green') {
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Official Robot™ — The Global Marketplace for Robots</title>
+<meta name="description" content="The Official Robot™ is the premier marketplace, distributor, and retailer for humanoid, quadruped, aerial, and marine robots — new and used. Huntington Beach, California.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="The Official Robot™">
+<meta property="og:description" content="The global marketplace for humanoid, quadruped, aerial, and marine robots. New, used, financed, serviced.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theofficialrobot.com/">
+<meta property="og:image" content="imagine_images/[The_Official_Robot]_logo_square.png">
+<link rel="icon" type="image/png" href="imagine_images/[The_Official_Robot]_icon_large_square.png">
+<link rel="apple-touch-icon" href="imagine_images/[The_Official_Robot]_icon_large_square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body class="page-home">
+<a class="skip-link" href="#main">Skip to content</a>
+<script src="js/theme.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/shell.js" data-page="home"></script>
+
+<div class="or-splash" id="orSplash" hidden>
+  <div class="or-splash-card" role="dialog" aria-modal="true" aria-labelledby="orSplashTitle">
+    <button class="or-splash-close" id="orSplashClose" aria-label="Close">×</button>
+    <div class="or-splash-hero">
+      <img src="imagine_images/splash_popup_hero.jpg" alt="Humanoid robots, companionoids, and flying vehicles">
+      <div class="or-splash-copy">
+        <h2 id="orSplashTitle">The official market for the robot age.</h2>
+        <p>Configure, finance, service, and resell humanoid, quadruped, aerial, and marine platforms — from Huntington Beach to a global catalog.</p>
+        <div class="or-splash-actions">
+          <a class="or-splash-primary" href="store.html">Enter Marketplace</a>
+          <button class="or-splash-ghost" type="button" id="or-splash-waitlist">Request early access</button>
+        </div>
+      </div>
+    </div>
+    <div class="or-splash-strip">
+      <figure>
+        <img src="imagine_images/splash_popup_companionoids.jpg" alt="Companionoid robots">
+        <figcaption>Companionoids</figcaption>
+      </figure>
+      <figure>
+        <img src="imagine_images/splash_popup_flying.jpg" alt="Human-powered flyer and eVTOL">
+        <figcaption>Human flight</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="splash">
+  <div class="container">
+    <div class="splash-grid">
+      <div class="hero-mark">
+        <svg viewBox="-4 -4 205 251" fill="currentColor" fill-rule="evenodd" role="img" aria-label="The Official Robot mark">
+          <path d="M33.0 0.0C33.3 3.3 33.3 14.2 35.0 20.0C36.7 25.8 39.2 30.0 43.0 35.0C46.8 40.0 47.5 40.8 58.0 50.0C68.5 59.2 93.2 78.8 106.0 90.0C118.8 101.2 129.7 113.0 135.0 117.0C140.3 121.0 136.0 121.8 138.0 114.0C140.0 106.2 149.0 79.0 147.0 70.0C145.0 61.0 131.5 63.7 126.0 60.0C120.5 56.3 116.3 51.0 114.0 48.0C111.7 45.0 112.3 46.0 112.0 42.0C111.7 38.0 110.8 31.0 112.0 24.0C113.2 17.0 117.0 2.7 119.0 0.0C121.0 -2.7 121.7 5.8 124.0 8.0C126.3 10.2 130.7 11.8 133.0 13.0C135.3 14.2 134.5 14.7 138.0 15.0C141.5 15.3 148.2 14.5 154.0 15.0C159.8 15.5 168.5 16.8 173.0 18.0C177.5 19.2 178.3 19.8 181.0 22.0C183.7 24.2 187.0 27.3 189.0 31.0C191.0 34.7 192.3 40.0 193.0 44.0C193.7 48.0 193.5 51.0 193.0 55.0C192.5 59.0 191.5 65.3 190.0 68.0C188.5 70.7 188.5 70.3 184.0 71.0C179.5 71.7 167.2 71.3 163.0 72.0C158.8 72.7 160.5 72.0 159.0 75.0C157.5 78.0 155.5 83.7 154.0 90.0C152.5 96.3 150.7 107.0 150.0 113.0C149.3 119.0 149.7 122.7 150.0 126.0C150.3 129.3 146.0 126.5 152.0 133.0C158.0 139.5 179.0 157.3 186.0 165.0C193.0 172.7 192.3 175.3 194.0 179.0C195.7 182.7 195.7 183.8 196.0 187.0C196.3 190.2 196.5 194.3 196.0 198.0C195.5 201.7 194.3 205.5 193.0 209.0C191.7 212.5 190.5 215.2 188.0 219.0C185.5 222.8 181.5 228.2 178.0 232.0C174.5 235.8 169.0 243.5 167.0 242.0C165.0 240.5 166.8 228.0 166.0 223.0C165.2 218.0 164.3 216.3 162.0 212.0C159.7 207.7 167.3 212.3 152.0 197.0C136.7 181.7 86.3 135.2 70.0 120.0C53.7 104.8 57.3 108.5 54.0 106.0C50.7 103.5 52.0 104.3 50.0 105.0C48.0 105.7 44.3 108.0 42.0 110.0C39.7 112.0 37.7 114.3 36.0 117.0C34.3 119.7 32.7 122.2 32.0 126.0C31.3 129.8 30.5 134.8 32.0 140.0C33.5 145.2 35.8 150.3 41.0 157.0C46.2 163.7 57.7 173.8 63.0 180.0C68.3 186.2 70.7 189.5 73.0 194.0C75.3 198.5 76.7 202.7 77.0 207.0C77.3 211.3 76.7 216.0 75.0 220.0C73.3 224.0 69.5 228.7 67.0 231.0C64.5 233.3 71.2 233.5 60.0 234.0C48.8 234.5 9.8 234.7 0.0 234.0C-9.8 233.3 -0.5 231.0 1.0 230.0C2.5 229.0 6.7 229.3 9.0 228.0C11.3 226.7 13.7 224.2 15.0 222.0C16.3 219.8 16.7 218.7 17.0 215.0C17.3 211.3 17.7 206.7 17.0 200.0C16.3 193.3 13.7 183.7 13.0 175.0C12.3 166.3 12.7 154.3 13.0 148.0C13.3 141.7 13.3 141.7 15.0 137.0C16.7 132.3 18.3 126.3 23.0 120.0C27.7 113.7 39.7 103.0 43.0 99.0C46.3 95.0 47.2 100.5 43.0 96.0C38.8 91.5 23.3 78.0 18.0 72.0C12.7 66.0 12.7 63.8 11.0 60.0C9.3 56.2 8.5 52.3 8.0 49.0C7.5 45.7 7.7 41.8 8.0 40.0C8.3 38.2 9.8 38.8 10.0 38.0C10.2 37.2 8.8 36.0 9.0 35.0C9.2 34.0 10.7 33.3 11.0 32.0C11.3 30.7 9.5 30.3 11.0 27.0C12.5 23.7 16.5 16.3 20.0 12.0C23.5 7.7 29.8 3.0 32.0 1.0C34.2 -1.0 32.8 0.2 33.0 0.0Z"/>
+        </svg>
+      </div>
+      <div class="hero hero-copy">
+        <div class="hero-badge">
+          <span class="dot"></span> Global Robotics Marketplace
+        </div>
+        <h1>Quest for the<br><span>Perfect Bot</span></h1>
+        <p class="hero-lead">
+          The official marketplace for humanoid, quadruped, aerial, and marine robots —
+          new, pre-owned, and configured to specification. Acquire, finance, service, and protect every platform from one home.
+        </p>
+
+        <div class="waitlist" id="waitlist">
+          <form class="form-row" id="waitlist-form" onsubmit="return handleSubmit(event)">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Work email for early access"
+              required
+              autocomplete="email"
+            >
+            <button type="submit" id="submit-btn">Request early access</button>
+          </form>
+          <p class="form-note">Priority notice for catalog access, reservations, and new platform listings.</p>
+          <div class="form-success" id="success-msg">
+            You are on the list. We will notify you when early access opens.
+          </div>
+          <div class="hero-alt">
+            <a class="preview-link" href="store.html">Open the live catalog →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="categories" aria-label="Platform categories">
+  <div class="container">
+    <div class="cat-grid">
+      <article class="cat-card">
+        <div class="cat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="2.2"/><path d="M8 10h8M12 7.2v5.3M8.5 22l2-6.5h3l2 6.5M7 15.5h10"/></svg>
+        </div>
+        <h3>Humanoid</h3>
+        <p>Bipedal platforms for industry, research, and the home.</p>
+        <div class="cat-links">
+          <a href="store.html?type=humanoid#configurator">Configure in Lab</a>
+          <a href="http://127.0.0.1:5173/?type=humanoid">Shop marketplace</a>
+        </div>
+      </article>
+      <article class="cat-card">
+        <div class="cat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="16" r="2.2"/><circle cx="18" cy="16" r="2.2"/><circle cx="6" cy="8" r="2.2"/><circle cx="18" cy="8" r="2.2"/><path d="M8 8h8M8 16h8M6 10v4M18 10v4"/></svg>
+        </div>
+        <h3>Campanionoid</h3>
+        <p>Quadrupeds for payload, inspection, and unstructured terrain.</p>
+        <div class="cat-links">
+          <a href="store.html?type=campanionoid#configurator">Configure in Lab</a>
+          <a href="http://127.0.0.1:5173/?type=campanionoid">Shop marketplace</a>
+        </div>
+      </article>
+      <article class="cat-card">
+        <div class="cat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="2"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3M6.2 6.2l2.1 2.1M15.7 15.7l2.1 2.1M17.8 6.2l-2.1 2.1M8.3 15.7l-2.1 2.1"/></svg>
+        </div>
+        <h3>Aerial</h3>
+        <p>Aerial systems for inspection, mapping, and production.</p>
+        <div class="cat-links">
+          <a href="store.html?type=aerial#configurator">Configure in Lab</a>
+          <a href="http://127.0.0.1:5173/?type=aerial">Shop marketplace</a>
+        </div>
+      </article>
+      <article class="cat-card">
+        <div class="cat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 15c2 0 3-2 5-2s3 2 5 2 3-2 5-2 3 2 3 2"/><path d="M3 19c2 0 3-2 5-2s3 2 5 2 3-2 5-2 3 2 3 2"/><path d="M12 4l3 7H9l3-7z"/></svg>
+        </div>
+        <h3>Water</h3>
+        <p>Marine vehicles for survey, inspection, and response.</p>
+        <div class="cat-links">
+          <a href="store.html?type=water#configurator">Configure in Lab</a>
+          <a href="http://127.0.0.1:5173/?type=water">Shop marketplace</a>
+        </div>
+      </article>
+    </div>
+    <aside class="parts-strip" aria-label="Parts and accessories">
+      <div class="parts-strip-icon" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V7.5a1.5 1.5 0 0 1 3 0V13"/><path d="M11 12.5V6.2a1.5 1.5 0 0 1 3 0V13"/><path d="M14 12V8.2a1.5 1.5 0 0 1 3 0V14c0 3.6-2.2 6-5 6s-5-2.4-5-6V10.2a1.5 1.5 0 0 1 3 0V13"/></svg>
+      </div>
+      <p class="parts-strip-copy"><strong>Hands &amp; end-effectors</strong> — parts and accessories, listed by exact SKU</p>
+      <div class="parts-strip-links">
+        <a href="store.html?type=hand#configurator">Configure in Lab</a>
+        <a href="http://127.0.0.1:5173/?type=hand">Shop marketplace</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="pillars" aria-label="What we offer">
+  <div class="container">
+    <div class="pillar-grid">
+      <a class="pillar" href="http://127.0.0.1:5173/">
+        <h3>Marketplace</h3>
+        <p>List and transact new or pre-owned robots by exact model — the liquidity layer for the robotics economy.</p>
+      </a>
+      <a class="pillar" href="financing.html">
+        <h3>Financing</h3>
+        <p>Structured acquisition terms for high-intent buyers, aligned with how platforms are actually delivered.</p>
+      </a>
+      <a class="pillar" href="service.html">
+        <h3>Service &amp; Repair</h3>
+        <p>Professional service for platforms sold through the marketplace, so support continues after delivery.</p>
+      </a>
+      <a class="pillar" href="warranty.html">
+        <h3>Extended Warranties</h3>
+        <p>Extended protection on every listing — manufacturer coverage complemented by Official Robot terms.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer id="or-footer"></footer>
+<script src="js/home.js"></script>
+</body>
+</html>

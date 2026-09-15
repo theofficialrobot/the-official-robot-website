@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan-purple">
+<head>
+<meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('or_theme_v1');
+    if (t === 'orange-magenta') t = 'magenta-orange';
+    if (t === 'leo' || t === 'gemini' || t === 'capricorn') t = 'yellow-brown';
+    if (t === 'sagittarius' || t === 'libra' || t === 'scorpio' || t === 'aries') t = 'magenta-orange';
+    if (t === 'cyan-purple' || t === 'yellow-brown' || t === 'magenta-orange' || t === 'yellow-green') {
+      document.documentElement.setAttribute('data-theme', t);
+    }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robotics News — The Official Robot™</title>
+<meta name="description" content="Robotics news for buyers, sellers, and operators. Huntington Beach, California.">
+<link rel="icon" type="image/png" href="imagine_images/[The_Official_Robot]_icon_large_square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-home">
+<a class="skip-link" href="#main">Skip to content</a>
+<script src="js/theme.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/shell.js" data-page="home"></script>
+<main id="main" class="page-copy">
+  <div class="container">
+<p class="kicker">Robotics News</p>
+<h1>Signal from the robot economy</h1>
+<p class="lead">We cover platform launches, used-market liquidity, and the service stack that makes ownership bankable — not press-release theater.</p>
+<div class="page-grid">
+  <article class="page-card"><h3>Used humanoids need a real market</h3><p>List by exact model SKU. Condition grades and Official Robot certification are how resale becomes liquid.</p></article>
+  <article class="page-card"><h3>Attach is the margin</h3><p>Financing, warranty, and service on every build — new or pre-owned — is how this platform compounds.</p></article>
+  <article class="page-card"><h3>Huntington Beach, global catalog</h3><p>Authorized distribution plus a public marketplace. Configure in the lab, transact in the market.</p></article>
+</div>
+<a class="page-cta page-cta-grad" href="http://127.0.0.1:5173/">Open the live marketplace</a>
+  </div>
+</main>
+<footer id="or-footer"></footer>
+</body>
+</html>
